@@ -108,8 +108,8 @@ CreatesForms: Create a Form or FormBuilder:
 
  
 ```php
-use Barryvdh\Form\ValidatesForms;
-use Barryvdh\Form\CreatesForms;
+use Yobidoyobi\Form\ValidatesForms;
+use Yobidoyobi\Form\CreatesForms;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
