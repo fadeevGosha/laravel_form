@@ -23,7 +23,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.1-dev"
+            "master": "0.1"
         },
         "laravel": {
             "providers": [
@@ -46,4 +46,5 @@
             "email": "georgii.fadeev@yobidoyobi.com"
         }
     ],
+    "minimum-stability": "dev"
 }
