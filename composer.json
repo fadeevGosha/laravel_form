@@ -1,0 +1,50 @@
+{
+    "name": "pazzlefood/laravel-form",
+    "description": "This packages integrates Symfony Form Component in Laravel.",
+    "type": "composer-plugin",
+    "license": "\"yobidoyobi\"",
+    "require": {
+        "php": "^8",
+        "illuminate/support": "^8|^9",
+        "symfony/form": "^5|^6",
+        "symfony/validator": "^5|^6",
+        "symfony/twig-bridge": "^5|^6",
+        "twig/twig": "^2.13|^3.3.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yobidoyobi\\Form\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Yobidoyobi\\Form\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Yobidoyobi\\Form\\SymfonyFormProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^2.3",
+        "orchestra/testbench": "^3|^4|^5|^6|^7"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 src/",
+        "fix-style": "phpcbf -p --standard=PSR2 src/"
+    },
+    "authors": [
+        {
+            "name": "Георгий",
+            "email": "georgii.fadeev@yobidoyobi.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
