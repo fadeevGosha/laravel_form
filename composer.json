@@ -1,7 +1,7 @@
 {
     "name": "pazzlefood/laravel-form",
     "description": "This packages integrates Symfony Form Component in Laravel.",
-    "keywords": ["laravel-form", "form", "formbuilder", "forms"],
+    "keywords": ["laravel-form", "yobidoyobygf-laravel", "yobidoyobygf", "laravel-symfony-form"],
     "license": "MIT",
     "require": {
         "php": "^8",
@@ -46,4 +46,3 @@
     "minimum-stability": "dev",
     "prefer-stable": true
 }
-
