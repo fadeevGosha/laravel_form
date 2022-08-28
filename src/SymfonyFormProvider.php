@@ -78,7 +78,7 @@ class SymfonyFormProvider extends ServiceProvider
 
     public function register():void
     {
-        $configPath = __DIR__ . '/../../config/form.php';
+        $configPath = __DIR__ . '/../config/form.php';
         $this->mergeConfigFrom($configPath, 'form');
 
         $this->app->singleton(TwigRendererEngine::class, function ($app) {
