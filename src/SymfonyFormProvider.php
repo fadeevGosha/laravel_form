@@ -63,11 +63,11 @@ class SymfonyFormProvider extends ServiceProvider
 
         $twig->addExtension(new FormExtension());
 
-        $twig->addFilter(new TwigFilter('trans', function ($id = null, $replace = [], $locale = null) {
+        $twig->addFilter(new TwigFilter('trans', function ($id = null) {
             if (empty($id)) {
                 return '';
             }
-            return app('translator')->get($id, $replace, $locale);
+            return app('translator')->get($id);
         }));
 
         $twig->addFunction(new TwigFunction('csrf_token', 'csrf_token'));
@@ -93,11 +93,11 @@ class SymfonyFormProvider extends ServiceProvider
 
         $this->app->alias(FormRenderer::class, FormRendererInterface::class);
 
-        $this->app->bind('form.type.extensions', function ($app) {
-            return array(
+        $this->app->bind('form.type.extensions', concrete: function ($app) {
+            return [
                 new FormDefaultsTypeExtension($app['config']->get('form.defaults', [])),
                 new ValidationTypeExtension($app['validator']),
-            );
+            ];
         });
 
         $this->app->bind('form.type.guessers', function ($app) {
@@ -107,12 +107,12 @@ class SymfonyFormProvider extends ServiceProvider
         $this->app->bind(FormFactoryInterface::class, FormFactory::class);
 
         $this->app->bind('form.extensions', function ($app) {
-            return array(
+            return [
                 new SessionExtension(),
                 new HttpExtension(),
                 new EloquentExtension(),
                 new FormValidatorExtension(),
-            );
+            ];
         });
 
         $this->app->bind('form.resolved_type_factory', function () {
@@ -124,6 +124,7 @@ class SymfonyFormProvider extends ServiceProvider
                 ->addExtensions($app['form.extensions'])
                 ->addTypeExtensions($app['form.type.extensions'])
                 ->addTypeGuessers($app['form.type.guessers'])
+                ->addTypes(array(...$this->app->tagged('form.types')))
                 ->setResolvedTypeFactory($app['form.resolved_type_factory'])
                 ->getFormFactory();
         });
