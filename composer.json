@@ -1,7 +1,7 @@
 {
-    "name": "pazzlefood/laravel-form",
+    "name": "symphonygf/laravel-form",
     "description": "This packages integrates Symfony Form Component in Laravel.",
-    "keywords": ["laravel-form", "yobidoyobygf-laravel", "yobidoyobygf", "forms"],
+    "keywords": ["laravel-form", "symphonygf-laravel", "symphonygf", "symphonygf-forms"],
     "license": "MIT",
     "require": {
         "php": "^7.2|^8",
@@ -40,7 +40,7 @@
     "authors": [
         {
             "name": "Георгий",
-            "email": "georgii.fadeev@yobidoyobi.com"
+            "email": "georgii.fadeev@mail.ru"
         }
     ],
     "minimum-stability": "dev",
